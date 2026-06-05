@@ -34,7 +34,7 @@ COPY --from=builder /app/apps/backend/.medusa/server ./
 RUN pnpm install --prod --no-frozen-lockfile
 
 EXPOSE 9000
-CMD ["sh", "-c", "pnpm medusa db:migrate && pnpm start"]
+CMD ["sh", "-c", "pnpm medusa db:migrate && medusa start"]
 
 #FROM base AS storefront
 #WORKDIR /app
